@@ -1,0 +1,85 @@
+{
+    "recommended": "0.6.4",
+    "minimum_required": "0.5.0",
+    "gui": [
+        {
+            "label": "Extract",
+            "window_name": "Convert localization to JSON",
+            "command": "python\\python.exe -E src\\main.py %localization% --mode=extract",
+            "show_last_line": true,
+            "button": "Extract",
+            "components": [
+                {
+                    "type": "file",
+                    "label": "Localization file",
+                    "extension": "Localization files | *.localization",
+                    "add_quotes": true,
+                    "id": "localization",
+                    "placeholder": "Drop .localization here!"
+                }
+            ]
+        },
+        {
+            "label": "Merge Subtitles",
+            "window_name": "Merge subtitles",
+            "command": "python\\python.exe -E src\\main.py %json1% %json2% --mode=merge",
+            "show_last_line": true,
+            "button": "Merge",
+            "components": [
+                {
+                    "type": "file",
+                    "label": "First language data",
+                    "extension": "JSON files | *.json",
+                    "add_quotes": true,
+                    "id": "json1",
+                    "placeholder": "Drop .json here!"
+                },
+                {
+                    "type": "file",
+                    "label": "Second language data",
+                    "extension": "JSON files | *.json",
+                    "add_quotes": true,
+                    "id": "json2",
+                    "placeholder": "Drop .json here!"
+                }
+            ]
+        },
+        {
+            "label": "Inject",
+            "window_name": "Inject json into localization",
+            "command": "python\\python.exe -E src\\main.py %localization% %json% --mode=inject",
+            "show_last_line": true,
+            "button": "Inject",
+            "components": [
+                {
+                    "type": "file",
+                    "label": "Localization file",
+                    "extension": "Localization files | *.localization",
+                    "add_quotes": true,
+                    "id": "localization",
+                    "placeholder": "Drop .localization here!"
+                },
+                {
+                    "type": "file",
+                    "label": "JSON file",
+                    "extension": "JSON files | *.json",
+                    "add_quotes": true,
+                    "id": "json",
+                    "placeholder": "Drop .json here!"
+                }
+            ]
+        }
+    ],
+    "help": [
+        {
+            "type": "url",
+            "label": "README",
+            "url": "https://github.com/matyamod/RnC-Dualsub-Tool"
+        },
+        {
+            "type": "url",
+            "label": "About Tuw",
+            "url": "https://github.com/matyalatte/tuw"
+        }
+    ]
+}

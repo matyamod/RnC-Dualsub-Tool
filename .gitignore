@@ -1,0 +1,14 @@
+# python
+python
+__pycache__
+
+# extensions
+*.localization
+*.stage
+*.json
+!gui_definition.json
+*.exe
+_lint.bat
+_validate.bat
+!download_portable_python.bat
+*.txt
